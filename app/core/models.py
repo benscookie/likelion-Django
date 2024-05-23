@@ -60,7 +60,12 @@ class Movie(models.Model):
     )
     title = models.CharField(max_length=255)
     director = models.CharField(max_length=255)
-    """main_character = models.ArrayField()"""
+    # main_character = models.ArrayField(
+    #     models.CharField(max_length=255),
+    #     default= list,
+    #     blank=True
+    #     )
+    main_character = models.CharField(max_length=255)
     duration = models.IntegerField()
     rating = models.FloatField(max_length=10)
     description = models.TextField(max_length=255)
