@@ -52,3 +52,18 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.base_recipe
+
+class Movie(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete= models.CASCADE
+    )
+    title = models.CharField(max_length=255)
+    director = models.CharField(max_length=255)
+    """main_character = models.ArrayField()"""
+    duration = models.IntegerField()
+    rating = models.FloatField(max_length=10)
+    description = models.TextField(max_length=255)
+    
+    def __str__(self):
+        return self.base_movie
